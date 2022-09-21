@@ -32,7 +32,7 @@ jobs:
       - name: Set up Python 3
         uses: actions/setup-python@v4
         env:
-          CRED_PATH: ${{ steps.auth.outputs.GOOGLE_GHA_CREDS_PATH }}  
+          GOOGLE_APPLICATION_CREDENTIALS: ${{ steps.auth.outputs.GOOGLE_GHA_CREDS_PATH }}  
         with:
           python-version: "3.x"
       - name: Install dependencies
@@ -46,6 +46,9 @@ jobs:
           flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
           # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
           flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
+      - name: Output result
+        run: "echo THING: ${{ steps.auth.outputs.GOOGLE_GHA_CREDS_PATH }}"
+        
       - name: run file
         run: |
           python manipulatecsv.py
