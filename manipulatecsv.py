@@ -7,14 +7,6 @@ from googleapiclient.errors import HttpError
 
 
 def get_values(spreadsheet_id, range_name):
-    """
-    Creates the batch_update the user has access to.
-    Load pre-authorized user credentials from the environment.
-    TODO(developer) - See https://developers.google.com/identity
-    for guides on implementing OAuth2 for the application.
-        """
-    
-    print(os.environ)
     creds, _ = google.auth.default()
     # pylint: disable=maybe-no-member
     try:
