@@ -15,7 +15,7 @@ def get_values(spreadsheet_id, range_name):
         """
     
     print(os.environ)
-    # creds, _ = google.auth.default()
+    creds, _ = google.auth.default()
     # pylint: disable=maybe-no-member
     try:
         service = build('sheets', 'v4', credentials=creds)
