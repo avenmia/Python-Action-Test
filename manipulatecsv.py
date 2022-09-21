@@ -24,4 +24,5 @@ def get_values(spreadsheet_id, range_name):
 
 if __name__ == '__main__':
     # Pass: spreadsheet_id, and range_name
-    get_values("1YGt_Y70oy6qc09ZZ7kip9DM2JGtRC2fAHxi6JXOIsSk", "A1:C2")
+    get_values("1YGt_Y70oy6qc09ZZ7kip9DM2JGtRC2fAHxi6JXOIsSk", "Maui")
+    get_values("1YGt_Y70oy6qc09ZZ7kip9DM2JGtRC2fAHxi6JXOIsSk", "Kauai")
