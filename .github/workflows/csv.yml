@@ -3,6 +3,22 @@ name: CSV Manipulation
 on: [push]
 
 jobs:
+
+  auth:
+    permissions:
+        contents: 'read'
+        id-token: 'write'
+
+      steps:
+      # actions/checkout MUST come before auth
+      - uses: 'actions/checkout@v3'
+
+      - id: 'auth'
+        name: 'Authenticate to Google Cloud'
+        uses: 'google-github-actions/auth@v0'
+        with:
+          credentials_json: ${{ secrets.JsonCreds  }}
+  
   build:
 
     runs-on: ubuntu-latest
