@@ -21,6 +21,7 @@ jobs:
       uses: 'google-github-actions/auth@v0'
       with:
         credentials_json: ${{ secrets.JsonCreds  }}
+        create_credentials_file: true
   
   build:
 
